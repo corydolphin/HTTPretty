@@ -219,6 +219,14 @@ def test_fakesock_socket_getpeercert(dt):
     })
 
 
+def test_fakesock_socket_socket_pair():
+    ("fakesock.socket should handle file descriptor properly")
+    # Create a socket pair, which on Python3 passes a file descriptor.
+    a, b = socket.socketpair()
+    a.close()
+    b.close()
+
+
 def test_fakesock_socket_ssl():
     ("fakesock.socket#ssl should take a socket instance and return itself")
     # Given a fake socket instance
